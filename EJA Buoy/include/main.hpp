@@ -18,7 +18,7 @@
 #define PERIOD_TX_LORA 1000   // Period between Lora Transmissions
 #define PERIOD_ERASE_BUFF 10000 // Period between the erase of terminal msgs
 #define PERIOD_TX_LORA 1000   // Period between Lora Transmissions
-#define LORA_FREQUENCY 915E6  // Frequency used by the LoRa module
+#define LORA_FREQUENCY 915E6  // Frequency used by the LoRa module (You can change it to your country requirement)
 #define GPS_BAUD  9600        // GPS baud rate
 #define TIME_PARAM_INPUT_1 "hours"  // Params used to parse the html form submit
 #define TIME_PARAM_INPUT_2 "min"    // Params used to parse the html form submit
