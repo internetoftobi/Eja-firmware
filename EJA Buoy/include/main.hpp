@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <TinyGPS++.h>
 #include <SPI.h>
 #include <LoRa.h>
@@ -26,4 +25,3 @@
 #define TIME_PARAM_INPUT_3 "sec"    // Params used to parse the html form submit
 #define GPS_MESSAGE_ID 0
 #define TIMER_MESSAGE_ID 1
-
