@@ -19,7 +19,7 @@
 #define PERIOD_TX_LORA 1000   // Period between Lora Transmissions
 #define PERIOD_ERASE_BUFF 10000 // Period between the erase of terminal msgs
 #define PERIOD_TX_LORA 1000   // Period between Lora Transmissions
-#define LORA_FREQUENCY 915E6  // Frequency used by the LoRa module
+#define LORA_FREQUENCY 868E6  // Frequency used by the LoRa module (433E6 , 868E6 , 915E6)
 #define GPS_BAUD  9600        // GPS baud rate
 #define GPS_RX    16
 #define GPS_TX    17
