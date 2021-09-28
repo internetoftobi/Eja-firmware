@@ -57,7 +57,8 @@ void onReceiveLora(int packetSize);
 void onTxDoneLoRa(); 
 void setup() {
   // Initialize serial communication (used for the GPS)
-  Serial.begin(GPS_BAUD);
+  Serial2.begin(GPS_BAUD, SERIAL_8N1, GPS_RX, GPS_TX);
+  Serial.begin(115200);
   // Initialize the output variables as outputs
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
@@ -66,13 +67,14 @@ void setup() {
   ledcAttachPin(MOTOR1, PWM_CHANNEL);
   // Setup LoRa module
   LoRa.setPins(CS_LORA, RST_LORA, IRQ_LORA);
+ 
 
   // Initialize the LoRa module
   if (!LoRa.begin(LORA_FREQUENCY)) {
     Serial.println("LoRa init failed. Check your connections.");
     while (true);                       // if failed, do nothing
   }
-
+  LoRa.setSpreadingFactor(LORA_SF);
   LoRa.onReceive(onReceiveLora);    // Config LoRa RX routines
   LoRa.onTxDone(onTxDoneLoRa);      // Config LoRa TX routines
   LoRa_rxMode();                // Activate LoRa RX
@@ -162,8 +164,8 @@ static void smartDelay(unsigned long ms)
   unsigned long start = millis();
   do
   {
-    while (Serial.available())
-      gps.encode(Serial.read());
+    while (Serial2.available())
+      gps.encode(Serial2.read());
   } while (millis() - start < ms);
 }
 
