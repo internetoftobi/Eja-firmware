@@ -11,4 +11,3 @@ Before you do that, you need to install few ESP32 libraries:
 	
 - Buoy:
 	- TinyGPS++
-****I will keep writing about it****
